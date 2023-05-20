@@ -1,6 +1,6 @@
 # CodingNomads Java Fundamentals
 
-This project contains a variety of textbook examples and labs focused on Java labs_examples.fundamentals - edit #1!
+This project contains a variety of textbook examples and labs focused on Java labs_examples.fundamentals - edit #2 branch edit!
 
 ## Getting Started
 
