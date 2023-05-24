@@ -24,6 +24,12 @@ public class Exercise_07 {
         int days = scanner.nextInt();
 
         // write completed code here
+        System.out.println("There are " + calculateSeconds(days) + " seconds in " + days + " days.");
 
+    }
+
+    public static int calculateSeconds(int numOfDays) {
+        //calculates the number of seconds in a day.
+        return numOfDays * 86400;
     }
 }
