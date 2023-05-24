@@ -24,6 +24,12 @@ public class Exercise_02 {
     public static void main(String[] args) {
 
         // write code here
+        int wideningOne = 10;
+        double wideningTwo = wideningOne;
+        System.out.println(wideningTwo);
 
+        double narrowingOne = 10.5;
+        int narrowingTwo = (int)narrowingOne;
+        System.out.println(narrowingTwo);
     }
 }
