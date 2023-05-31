@@ -8,4 +8,19 @@ package labs_examples.conditions_loops.labs;
  */
 
 public class Exercise_06 {
+    public static void main(String[] args) {
+        int numLower = 50;
+        int numUpper = 100;
+        int sum = calculateSum(numLower, numUpper);
+        System.out.println(sum);
+    }
+
+    public static int calculateSum(int numLower, int numUpper) {
+        int num = 0;
+        while(numLower <= numUpper) {
+            num += numLower;
+            numLower++;
+        }
+        return num;
+    }
 }

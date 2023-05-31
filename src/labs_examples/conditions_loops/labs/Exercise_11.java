@@ -23,4 +23,13 @@ package labs_examples.conditions_loops.labs;
 
 public class Exercise_11 {
 
+    public static void main(String[] args) {
+        for (int rows = 1; rows <= 10; rows++) {
+            for (int columns = 1; columns <= 10; columns++) {
+                System.out.print(rows * columns + "|");
+            }
+            System.out.println();
+        }
+    }
+
 }
