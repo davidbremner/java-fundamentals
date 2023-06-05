@@ -18,6 +18,28 @@ package labs_examples.arrays.labs;
 public class Exercise_03 {
 
     public static void main(String[] args) {
-        
+        int[][] twoDArray = createTwoDArray(5);
+        printTwoDArray(twoDArray);
+    }
+
+    private static int[][] createTwoDArray(int size) {
+        int[][] twoDArray = new int[size][size];
+        int counter = 0;
+        for(int row = 0; row < size; row++) {
+            for(int col = 0; col < size; col++) {
+                counter++;
+                twoDArray[row][col] = counter * 3;
+            }
+        }
+        return twoDArray;
+    }
+
+    private static void printTwoDArray(int[][] twoDArray) {
+        for(int[] row : twoDArray) {
+            for(int element : row) {
+                System.out.print(element + " ");
+            }
+            System.out.println();
+        }
     }
 }
