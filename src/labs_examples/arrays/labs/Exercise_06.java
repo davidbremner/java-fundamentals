@@ -19,11 +19,14 @@ public class Exercise_06 {
 
         int temp;
 
-        // Question: in the for loop below, why do we divide "nums.length" by 2?
+        // Question: in the for loop below, why do we divide "nums.length" by 2? To half the iterations, because we will swap.
         for(int i = 0; i < nums.length / 2; i++){
             // swap elements at indexes in array
             // you have two indices readily available for you to use "i" (which increments) and "nums.length"
             // you've also got this "temp" variable you can use to hold a value temporarily
+            temp = nums[i];
+            nums[i] = nums[nums.length - (1 + i)];
+            nums[nums.length - (1 + i)] = temp;
         }
         System.out.print("Contents of array after for loop - ");
         // print each element of the array to verify reverse order
