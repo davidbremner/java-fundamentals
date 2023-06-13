@@ -1,5 +1,8 @@
 package labs_examples.objects_classes_methods.labs.methods;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 /**
  *     1) Demonstrate method overloading in this class
  *
@@ -117,7 +120,67 @@ public class MethodTraining {
         return true;
     }
 
-    public static void main(String[] args){
+    // Task 6:
+    static int[] arrayHighLow(int[] array) {
+        int[] result = new int[2];
+        int highest = Integer.MIN_VALUE;
+        int lowest = Integer.MAX_VALUE;
+
+        for (int number : array) {
+            if (number > highest) {
+                highest = number;
+            }
+            if (number < lowest) {
+                lowest = number;
+            }
+        }
+
+        result[0] = lowest;
+        result[1] = highest;
+        return result;
+    }
+
+  // Task 7:
+  static ArrayList<Integer> divisibleArray(int maxNum, int divisor1, int divisor2) {
+      ArrayList<Integer> newArray = new ArrayList<>();
+      for (int i = 0; i < maxNum; i++) {
+          if (i % divisor1 == 0 && i % divisor2 == 0) {
+              newArray.add(i);
+          }
+      }
+      return newArray;
+  }
+
+  // Task 8:
+  static String[] arrayReversal(String[] array) {
+      String temp;
+      int start = 0;
+      int end = array.length - 1;
+
+      while (start < end) {
+          // Swap elements at start and end
+          temp = array[start];
+          array[start] = array[end];
+          array[end] = temp;
+
+          // Move pointers to the centre
+          start++;
+          end--;
+      }
+
+      return array;
+
+      /** My first attempt Task 8: (Above a cleaner alternative:
+      String temp;
+      for (int i = 0; i < array.length / 2; i++) {
+          temp = array[i];
+          array[i] = array[array.length - (1 + i)];
+          array[array.length - (1 + i)] = temp;
+      }
+      return array;
+      */
+  }
+  public static void main(String[] args) {
         // Task 1:
         System.out.println("Method overloading example one: " + calculation(3, 4));
         System.out.println("Method overloading example two: " + calculation(5, 2, 4));
@@ -142,5 +205,16 @@ public class MethodTraining {
         // Task 5:
         System.out.println("Is or isn't a prime number: " + isPrimeNumber(36));
 
+        // Task 6:
+        int[] someArray = {4, 10, 3, 7, 50};
+        System.out.println("The highest and lowest numbers in the provided array are: " + Arrays.toString(arrayHighLow(someArray)));
+
+        // Task 7:
+        ArrayList<Integer> result = divisibleArray(10, 3, 2);
+        System.out.println("The length of the array of divisible numbers is: " + result.size());
+
+        // Task 8:
+        String[] anArray = {"hello", "there", "peers", "!"};
+        System.out.println(Arrays.toString(arrayReversal(anArray)));
   }
 }
