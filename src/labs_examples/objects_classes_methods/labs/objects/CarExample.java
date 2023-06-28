@@ -37,6 +37,10 @@ class Engine {
 
     }
 
+    public double getHorsePower() {
+        return horsePower;
+    }
+
     @Override
     public String toString() {
         return "Engine{" +
