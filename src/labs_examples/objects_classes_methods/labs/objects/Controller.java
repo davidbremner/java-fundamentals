@@ -11,7 +11,7 @@ public class Controller {
         } catch (IllegalArgumentException e){
             System.out.println("Failed to create ticket for attendee: " + e.getMessage());
         }
-
+        System.out.println("ArtistOne: " + artistOne.getArtistName() + " is playing at: " + eventOne.getArenaName()); // demonstration of Object Association
         System.out.println("Number of attendees at " + eventOne.getArenaName() + " is " + eventOne.getCapacity()); // checking if capacity drops
         Artist artistTwo = new Artist("Kaleo", "low");
         Event eventTwo = new Event(artistTwo);
