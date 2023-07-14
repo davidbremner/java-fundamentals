@@ -4,3 +4,11 @@ both an initial sum of "money" and let them play with it. Take actual bets. If e
 Consistently print out the current amount of money both the user and computer have after each game.
 
 Any additional features you'd like to add? Go for it!
+
+Make any variables final if they can (then test!)
+
+Ideas:
+1. Improve on card deal method - remove card from deck and add card to used pile
+2. Improve on output in Controller - A method in player which outputs the score as a string playerOutput()
+3. Display card 'image' for a better visual experience
+4. Display Jack/Queen/King as that rather than their card numbers (11/12/13)
