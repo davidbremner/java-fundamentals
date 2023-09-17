@@ -7,7 +7,7 @@ public class TranPayments implements ServicingSystem {
     private ArrayList<Order> orders;
 
     public TranPayments() {
-        ArrayList<CustomerProfile>
+        //ArrayList<CustomerProfile> - need to fix
     }
 
     public void getCustomerProfile(CustomerProfile customerProfiles) {
