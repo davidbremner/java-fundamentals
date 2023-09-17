@@ -1,6 +1,8 @@
 
 Without running the code below, please tell me what it will print.
-
+Answer: It will print "Child called". This is due to the object 'c' being an instance of Child even though it is of type
+Parent. Therefore the method that is called is doSomething() of the Child class which overrides the doSomething() method
+in the parent/superclass.
 
 
 public class InheritanceTest

@@ -4,7 +4,9 @@ package labs_examples.objects_classes_methods.labs.oop.A_inheritance;
  * Why does the output print in the order it does?
  *
  * You answer:
- *
+ *  This is because the superclass is always called/constructed first before that current subclass. Therefore
+ *  before C is constructed, it goes up to the parent B class which consequently goes up to A and then works its
+ *  way down (A->B->C). This is a demonstration of inheritance hierarchy.
  */
 
 class A_1 {

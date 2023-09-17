@@ -1,6 +1,9 @@
 
 Without running the code below, please tell me what will print. Why?
-
+Answer: It will first print "Parent called" and then print "Child called". This is due object 'c' is an instance of
+class Child (and a type of class Parent) but due to inheritance hierarchy the superclass constructor must be invoked
+first so the Parent constructor containing "Parent called" will be called and printed and then the "Child called" within
+the Child constructor will be called and print that message.
 
 
 
