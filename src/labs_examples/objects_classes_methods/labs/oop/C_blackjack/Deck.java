@@ -4,21 +4,17 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Deck {
-    private Card[] cards;
-    private ArrayList<Integer> usedCards;
+    private final Card[] CARDS;
+    private final ArrayList<Integer> USED_CARDS;
 
     public Deck() {
-        cards = new Card[52];
-        usedCards = new ArrayList<>();
+        CARDS = new Card[52];
+        USED_CARDS = new ArrayList<>();
         populateDeck();
     }
 
-    public Card[] getCards() {
-        return getCards();
-    }
-
     public ArrayList<Integer> getUsedCards() {
-        return usedCards;
+        return USED_CARDS;
     }
 
     public void populateDeck() {
@@ -26,7 +22,7 @@ public class Deck {
         int cardCount = 0;
         for (int cardNum = 1; cardNum <= deckHighestValue; cardNum++) {
             for (char suit : new Card().getSuit()) {
-                cards[cardCount] = new Card(suit, cardNum);
+                CARDS[cardCount] = new Card(suit, cardNum);
                 cardCount++;
             }
         }
@@ -35,10 +31,10 @@ public class Deck {
     public void deal(Player player) {
         boolean inUsedCards = true;
         while (inUsedCards) {
-            int randomCard = new Random().nextInt(cards.length); // picks random number
-            if (!usedCards.contains(randomCard)) {
-                player.getHand().getCards().add(cards[randomCard]); // adds the card (using index of randomCard) to the players hand
-                usedCards.add(randomCard); // adds the index number of the card that was drawn to know it has been used
+            int randomCard = new Random().nextInt(CARDS.length); // picks random number
+            if (!USED_CARDS.contains(randomCard)) {
+                player.getHand().getCards().add(CARDS[randomCard]); // adds the card (using index of randomCard) to the players hand
+                USED_CARDS.add(randomCard); // adds the index number of the card that was drawn to know it has been used
                 inUsedCards = false; // to break out of loop
             }
         }
