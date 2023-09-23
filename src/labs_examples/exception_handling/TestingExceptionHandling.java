@@ -1,4 +1,4 @@
-package labs_examples;
+package labs_examples.exception_handling;
 
 public class TestingExceptionHandling {
     public static void main(String[] args){
