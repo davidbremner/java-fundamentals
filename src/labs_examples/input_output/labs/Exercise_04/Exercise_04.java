@@ -1,4 +1,6 @@
-package labs_examples.input_output.labs;
+package labs_examples.input_output.labs.Exercise_04;
+
+import java.util.ArrayList;
 
 /**
  *
@@ -12,3 +14,10 @@ package labs_examples.input_output.labs;
  *      Then, write the arraylist of objects back out to a new .csv file. Ensure that the resulting csv file is valid.
  *
  */
+
+public class Exercise_04 {
+    public static void main(String[] args){
+        ArrayList<Transaction> firstTransactions = CsvParser.csvReader("src/labs_examples/input_output/files/transactions.csv");
+        System.out.println(firstTransactions);
+    }
+}
