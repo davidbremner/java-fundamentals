@@ -44,11 +44,23 @@ class LinkedListDoubly<E> {
         current.next = null;
     }
 
+    /**
+     * Adds a new Node to the beginning of the list.
+     * Process: Replaces the head Node with the newly created Node, linking the new Nodes next to the old head Node via
+     * the next instance variable and the old head Node's previous instance variable with the new head Node.
+     * @param data data for the head of the new list
+     */
     void addFirst(E data) {
         head = new NodeDoubly<>(head, data);
         head.next.previous = head;
     }
 
+    /**
+     * Adds a new Node to the end of the list.
+     * Process: Iterates through the LinkedList till it reaches the last linked Node class.
+     * the last Node of the list, thus replacing the new Node's next variable with null.
+     * @param data the data for the new node
+     */
     void addLast(E data) {
         NodeDoubly<E> current = head;
         while (current.next != null) {
