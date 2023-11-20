@@ -13,16 +13,18 @@ package labs_examples.datastructures.linkedlist.labs;
 
 class Exercise_02 {
     public static void main(String[] args){
-        DavesLinkedList<Integer> myList = new DavesLinkedList<>(1);
+        DavesLinkedList<Integer> myList = new DavesLinkedList<>();
+        System.out.println(myList.contains(10));
+        myList.removeLast();
+        myList.removeFirst();
         myList.addLast(2);
         myList.addLast(3);
         myList.addFirst(0);
         myList.addFirst(-1);
-        System.out.println(myList.contains(99));
+        System.out.println(myList.contains(3));
         myList.removeLast();
         myList.removeFirst();
-        myList.clear(100);
-        myList.clear(10);
+        myList.clear();
         System.out.println(myList.contains(10));
 
     }
@@ -44,8 +46,8 @@ class Node<E> {
 
 class DavesLinkedList<E> {
     Node<E> head;
-    public DavesLinkedList(E data) {
-        this.head = new Node<>(data);
+    public DavesLinkedList() {
+        this.head = new Node<>();
     }
 
     /**
@@ -54,6 +56,7 @@ class DavesLinkedList<E> {
      * @param data the data for the new node
      */
     void addLast(E data) {
+        if (head == null) head = new Node<>(data);
         Node<E> current = head;
         while (current.next != null) {
             current = current.next;
@@ -76,11 +79,16 @@ class DavesLinkedList<E> {
      * the last Node of the list, consequently replacing the penultimate Node's next variable with null.
      */
     void removeLast() {
-        Node<E> current = head;
-        while (current.next.next != null) {
-            current = current.next;
+        try {
+            Node<E> current = head;
+            while (current.next.next != null) {
+                current = current.next;
+            }
+            current.next = null;
+        } catch (NullPointerException e) {
+            System.out.println("No elements in list to remove: " + e.getMessage());
         }
-        current.next = null;
+
     }
 
     /**
@@ -88,15 +96,19 @@ class DavesLinkedList<E> {
      * Process: Replaces the current head with the next Node in the list.
      */
     void removeFirst() {
-        head = head.next;
+        try {
+            head = head.next;
+        } catch (NullPointerException e) {
+            System.out.println("No elements in list to remove: " + e.getMessage());
+        }
+
     }
 
     /**
      * Clears the old list and begins a new one!
-     * @param data data for the head of the new list
      */
-    void clear(E data) {
-        head = new Node<>(data);
+    void clear() {
+        head = new Node<>();
     }
 
     /**
@@ -107,10 +119,10 @@ class DavesLinkedList<E> {
      * @return boolean of true or false if the data passed to the method is found in one of the Nodes.
      */
     boolean contains(E data) {
+        if (head.data == null) return false;
         Node<E> current = head;
         while (current != null) {
             if (current.data.equals(data)) return true;
-            if (current.next == null) return false;
             current = current.next;
         }
         return false;
