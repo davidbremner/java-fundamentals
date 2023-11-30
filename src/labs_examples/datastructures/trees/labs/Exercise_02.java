@@ -8,6 +8,7 @@ package labs_examples.datastructures.trees.labs;
     Trie's are very interesting and useful data structures. Many interview questions, and real-world scenario's
     can be properly addressed using a Trie. We use Tries to store things like words and numbers in a highly
     efficient manner. See here: http://theoryofprogramming.com/wp-content/uploads/2015/06/trie12.jpg
+    https://theoryofprogramming.files.wordpress.com/2015/01/trie12.jpg
 
     Understanding and implement a Trie is a fantastic step in thinking creatively as a developer to
     accomplish goals as efficiently as possible.
